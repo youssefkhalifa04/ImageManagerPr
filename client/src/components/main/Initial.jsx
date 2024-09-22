@@ -30,7 +30,7 @@ export default function Initial() {
             {showButtons && (
                 <div className='main-container'>
                     <div className="convert" onClick={convert}>
-                        <h1>PNJ to JPEG</h1>
+                        <h1>PNG to JPEG</h1>
                         <h1>Conversion</h1>
                     </div>
                     <div className="remove" onClick={remove}>

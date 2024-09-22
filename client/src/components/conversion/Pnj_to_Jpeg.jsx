@@ -47,15 +47,24 @@ function Pnj_to_Jpeg() {
   return (
     <div className='container'>
         
-        <div className="hh">
+        <div className="hh gap">
             <img src={pic} className='left-arrow' onClick={refreshPage}/>
             <h1>Convert PNG to JPEG</h1>
             
             
-            <input type="file" accept="image/png" onChange={handleFileChange} />
+            <input 
+                    type="file" 
+                    accept="image/PNG" 
+                    onChange={handleFileChange} 
+                    id="file-upload"
+                    className="file-input"
+                />
+                <label htmlFor="file-upload" className="file-input-label">
+                    Choose an image
+                </label>
 
 
-            <button onClick={convertPngToJpeg} disabled={!imageFile} className='convert1'>
+            <button onClick={convertPngToJpeg} disabled={!imageFile} className='removebtn btn2'>
             Convert
             </button>
 
