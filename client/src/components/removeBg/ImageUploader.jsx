@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './ImageUploader.css'
 const ImageUploader = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -53,18 +53,20 @@ const ImageUploader = () => {
     };
 
     return (
-        <div className='container'>
-            <h1>Upload Image to Remove Background</h1>
-            <input type="file" accept="image/*" onChange={handleFileChange} />
-            <button onClick={handleUpload} disabled={loading} className='removebtn' >
-                {loading ? 'Processing...' : 'Remove Background'}
-            </button>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {outputUrl && (
-                <div>
-                    <button onClick={handleDownload} className='downloadbtn'>Download</button>
-                </div>
-            )}
+        <div className='containerbg'>
+            <div className='hh'>
+                <h1>Upload Image to Remove Background</h1>
+                <input type="file" accept="image/*" onChange={handleFileChange} />
+                <button onClick={handleUpload} disabled={loading} className='removebtn' >
+                    {loading ? 'Processing...' : 'Remove Background'}
+                </button>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {outputUrl && (
+                    <div>
+                        <button onClick={handleDownload} className='downloadbtn'>Download</button>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

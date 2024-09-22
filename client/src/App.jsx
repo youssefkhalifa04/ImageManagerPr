@@ -1,10 +1,10 @@
 import React from 'react';
-import ImageUploader from './components/ImageUploader';
+import Initial from './components/main/Initial.jsx'
 
 function App() {
   return (
     <>
-      <ImageUploader />
+      <Initial/>
     </>
   );
 }
