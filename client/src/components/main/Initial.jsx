@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ImageUploader from '../removeBg/ImageUploader';
 import Pnj_to_Jpeg from '../conversion/Pnj_to_Jpeg';
 import './Initial.css';
+import pic from '../../assets/pic.png'
 
 export default function Initial() {
     // State to track which component to render
@@ -41,6 +42,7 @@ export default function Initial() {
 
             
             <div className="component-display">
+                
                 {component}
             </div>
         </div>

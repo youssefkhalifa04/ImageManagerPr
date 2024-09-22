@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './ImageUploader.css'
+import pic from '../../assets/pic.png'
 const ImageUploader = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [outputUrl, setOutputUrl] = useState('');
-
+    
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
         setError(null);  // Reset error on file change
@@ -51,21 +52,44 @@ const ImageUploader = () => {
         link.click();
         document.body.removeChild(link);
     };
+    
+    const refreshPage = () => {
+        window.location.reload();
+    };
+    
 
     return (
         <div className='containerbg'>
             <div className='hh'>
-                <h1>Upload Image to Remove Background</h1>
-                <input type="file" accept="image/*" onChange={handleFileChange} />
-                <button onClick={handleUpload} disabled={loading} className='removebtn' >
-                    {loading ? 'Processing...' : 'Remove Background'}
-                </button>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-                {outputUrl && (
-                    <div>
-                        <button onClick={handleDownload} className='downloadbtn'>Download</button>
-                    </div>
-                )}
+                <img src={pic} className='left-arrow' onClick={refreshPage} />
+                <h1>Upload Image to Remove </h1>
+                <h1>Background</h1>
+                <div className="second-container">
+                <div className="file-input-container">
+                <input 
+                    type="file" 
+                    accept="image/*" 
+                    onChange={handleFileChange} 
+                    id="file-upload"
+                    className="file-input"
+                />
+                <label htmlFor="file-upload" className="file-input-label">
+                    Choose an image
+                </label>
+            </div>
+                    <button onClick={handleUpload} disabled={loading} className='removebtn' >
+                        {loading ? 'Processing...' : 'Remove Background'}
+                    </button>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
+                    {outputUrl && (
+                        <div className='hiro'>
+                            <button onClick={handleDownload} className='downloadbtn'>
+                                <div className="hover-bg"></div>
+                                <span>Download</span>
+                            </button>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

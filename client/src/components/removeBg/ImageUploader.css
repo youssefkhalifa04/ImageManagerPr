@@ -3,9 +3,111 @@
     width: 100%;
     height: 60vh;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
 
 
 }
 .hh{
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.second-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hiro{
+    display: flex;
+    align-items: center;
+}
+.downloadbtn {
+    position: relative;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    background: transparent; /* Fallback background */
+    border: 1px solid black;
+    cursor: pointer;
+    overflow: hidden; /* Ensure contents don’t overflow */
+    transition: all .3s linear;
+    margin-top: 20px;
+}
+
+.downloadbtn .hover-bg {
+    content: "";
+    background: linear-gradient(to right, #01ce1d, rgb(5, 171, 72));
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start hidden */
+    transition: left 0.5s linear;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.downloadbtn:hover .hover-bg {
+    left: 0; /* Move into view on hover */
+}
+
+.downloadbtn span {
+    position: relative; /* Stack on top */
+    z-index: 1;
+
+}
+.downloadbtn:hover{
+    color: white;
+}
+.removebtn{
+    padding: 10px 20px;
+    border: 1px solid gray;
+    font-weight: bold;
+    transition: all .3s linear;
+    border-radius: 20px;
+
+}
+.removebtn:hover{
+    
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+.file-input-container {
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+    margin: 20px auto; /* Center the input */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-input {
+    display: none; /* Hide the default file input */
+}
+
+.file-input-label {
+    padding: 10px 20px;
+    border: 1px solid gray;
+    font-weight: bold;
+    transition: all .3s linear;
+    border-radius: 20px;
+
+    transition:all 0.3s linear;
+}
+
+.file-input-label:hover {
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.file-input-label:active {
+    transform: translateY(2px); /* Simulate a button press */
+}
+

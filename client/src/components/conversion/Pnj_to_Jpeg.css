@@ -4,4 +4,11 @@
     height: 60vh;
     border-radius: 20px;
     border: 1px solid gray;
+    
+}
+.left-arrow{
+    position: fixed;
+    left: 30%;
+    top: 22%;
+    cursor: pointer;
 }

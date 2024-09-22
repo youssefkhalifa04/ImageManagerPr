@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Pnj_to_Jpeg.css'
+import pic from '../../assets/pic.png'
 function Pnj_to_Jpeg() {
   const [imageFile, setImageFile] = useState(null);
   const [downloadUrl, setDownloadUrl] = useState(null);
@@ -40,26 +41,30 @@ function Pnj_to_Jpeg() {
       console.error('Error during conversion:', error);
     }
   }
-
+    const refreshPage = () => {
+        window.location.reload();
+    };
   return (
     <div className='container'>
-      <div className="hh">
-        <h1>Convert PNG to JPEG</h1>
+        
+        <div className="hh">
+            <img src={pic} className='left-arrow' onClick={refreshPage}/>
+            <h1>Convert PNG to JPEG</h1>
+            
+            
+            <input type="file" accept="image/png" onChange={handleFileChange} />
 
-      
-        <input type="file" accept="image/png" onChange={handleFileChange} />
 
+            <button onClick={convertPngToJpeg} disabled={!imageFile} className='convert1'>
+            Convert
+            </button>
 
-        <button onClick={convertPngToJpeg} disabled={!imageFile} className='convert1'>
-        Convert
-        </button>
-
-        {converted && (
-        <a href={downloadUrl} download="converted.jpeg">
-            <button className='download'>Download</button>
-        </a>
-        )}
-      </div>
+            {converted && (
+            <a href={downloadUrl} download="converted.jpeg">
+                <button className='download'>Download</button>
+            </a>
+            )}
+        </div>
     </div>
   );
 }
